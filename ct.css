@@ -84,7 +84,7 @@ footer {
   justify-content: center;
   display: flex;
   align-content: center;
-  height: 10vh;
+  min-height: 10vh;
   gap: 20px;
 }
 
@@ -92,7 +92,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px auto;
+  margin: 1px auto;
   width: 430px;
   height: 50px;
   font-size: 20px;
