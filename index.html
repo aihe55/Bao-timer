@@ -20,19 +20,66 @@
 		Chess Timer!
 	</h1>
 
-	<div class="time">
-		<div class="time" id="timer1">5:00</div>
-		<div class="time" id="timer2">5:00</div>
+	<div>
+		<div class="container">
+			<div class="timeBox" id="player1">5:00</div>
+			<div class="timeBox" id="player2">5:00</div>		
+		</div>			
+		<div class="btnContainer">
+			<div class="resetBtn" id="reset">Reset</div>
+		</div>
 	</div>
-	<div class="time">
-		<button onclick="startTime(1)">Bonk</button>
-		<button onclick="startTime(2)">Bonk</button>
-	</div>	
-	
+
+
+
 	<footer>
 		&copy; 2024 Clairiel. All Rights Reserved.	
 	</footer>
 
+	<script>
+		let times = [300, 300]; // 5 minutes each (in seconds)
+		let activePlayer = 0;
+		let timer = null;
+
+		function updateDisplay() {
+			document.getElementById("player1").textContent = formatTime(times[0]);
+			document.getElementById("player2").textContent = formatTime(times[1]);
+		}
+
+		function formatTime(seconds) {
+			let minutes = Math.floor(seconds / 60);
+			let secs = seconds % 60;
+			return `${minutes}:${secs.toString().padStart(2, '0')}`;
+		}
+
+		function switchTurn() {
+			if (timer) clearInterval(timer);
+			timer = setInterval(() => {
+				if (times[activePlayer] > 0) {
+					times[activePlayer]--;
+					updateDisplay();
+				} else {
+					clearInterval(timer);
+					alert(`Player ${activePlayer + 1} loses!`);
+				}
+			}, 1000);
+			activePlayer = 1 - activePlayer;
+		}
+
+		document.getElementById("player1").addEventListener("click", switchTurn);
+		document.getElementById("player2").addEventListener("click", switchTurn);
+
+		document.getElementById("reset").addEventListener("click", () => {
+			clearInterval(timer);
+			times = [300, 300];
+			activePlayer = 0;
+			updateDisplay();
+		});
+
+		updateDisplay();
+	</script>
+
+<!-- -->
 
 </body>
 </html> 
