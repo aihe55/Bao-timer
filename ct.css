@@ -57,17 +57,47 @@ footer {
   z-index: 2;
 }
 
-.time {
+
+
+.container {
   justify-content: center;
   display: flex;
+  align-content: center;
+  height: 30vh;
   gap: 20px;
 }
 
-.timeContainer {
-  padding: 10px;
-  border: 10px solid white;
-  width: 50px;
+.timeBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
+  border: 10px solid #f5f5f5;
+  cursor: pointer;
+}
 
+.btnContainer {
+  justify-content: center;
+  display: flex;
+  align-content: center;
+  height: 10vh;
+  gap: 20px;
+}
+
+.resetBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  width: 430px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  border: 10px solid #f5f5f5;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 button {
