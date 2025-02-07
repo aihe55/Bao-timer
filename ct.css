@@ -63,7 +63,7 @@ footer {
   justify-content: center;
   display: flex;
   align-content: center;
-  height: 30vh;
+  min-height: 30vh;
   gap: 20px;
 }
 
