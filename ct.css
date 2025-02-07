@@ -73,6 +73,7 @@ footer {
   align-items: center;
   width: 200px;
   height: 200px;
+  font-size: 70px;
   border-radius: 30px;
   border: 10px solid #f5f5f5;
   cursor: pointer;
